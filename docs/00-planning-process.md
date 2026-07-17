@@ -30,4 +30,4 @@ reality.
 | 6. Core user flows & UX | Approved |
 | 7. Information architecture | Approved |
 | 8. Technical architecture | Approved |
-| 9. Launch & roadmap | In progress |
+| 9. Launch & roadmap | Approved |

@@ -12,8 +12,9 @@ next one starts.
 
 ## Status
 
-Planning in progress. See `docs/00-planning-process.md` for the roadmap and
-`docs/` for each step's decisions.
+Planning complete (all 9 steps approved). Building the MVP now per
+`docs/08-technical-architecture.md`. See `docs/00-planning-process.md` for
+the roadmap and `docs/` for each step's decisions.
 
 ## Planning steps
 
@@ -25,4 +26,4 @@ Planning in progress. See `docs/00-planning-process.md` for the roadmap and
 6. [Core user flows & UX](docs/06-core-user-flows-ux.md)
 7. [Information architecture](docs/07-information-architecture.md)
 8. [Technical architecture](docs/08-technical-architecture.md)
-9. Launch & roadmap
+9. [Launch & roadmap](docs/09-launch-and-roadmap.md)
