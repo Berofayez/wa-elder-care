@@ -16,9 +16,10 @@ fast, single-page form:
 - Elder's city/zip (service-area check)
 - Type of need (checkboxes: personal care, meals, mobility, companionship)
 - Urgency (ASAP / this week / just planning ahead)
+- How did you hear about us? (optional, marketing attribution)
 - Optional notes
 
-~6 fields total, mobile-first, no login required.
+~7 fields total, mobile-first, no login required.
 
 Submit → confirmation screen with message: **"Thanks — we'll call you back
 by the end of today"** (same-business-day promise) → email notification
