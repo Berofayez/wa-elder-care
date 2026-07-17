@@ -24,5 +24,5 @@ Planning in progress. See `docs/00-planning-process.md` for the roadmap and
 5. [MVP scope](docs/05-mvp-scope.md)
 6. [Core user flows & UX](docs/06-core-user-flows-ux.md)
 7. [Information architecture](docs/07-information-architecture.md)
-8. Technical architecture
+8. [Technical architecture](docs/08-technical-architecture.md)
 9. Launch & roadmap

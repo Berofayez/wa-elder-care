@@ -29,5 +29,5 @@ reality.
 | 5. MVP scope | Approved |
 | 6. Core user flows & UX | Approved |
 | 7. Information architecture | Approved |
-| 8. Technical architecture | In progress |
-| 9. Launch & roadmap | Not started |
+| 8. Technical architecture | Approved |
+| 9. Launch & roadmap | In progress |
