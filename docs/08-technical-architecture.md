@@ -15,11 +15,21 @@ Node/Next.js alternative were weighed and documented below for context.
 | Auth | Spring Security, username/password, 2 admin accounts (Step 6/7) stored in Postgres |
 | Build tool | Maven |
 | Email | Spring Mail + Gmail SMTP (app password) — notification emails land directly in the founder's Gmail inbox |
-| Hosting | Render.com free tier |
+| Hosting | Render.com free tier (via Dockerfile — see correction below) |
 | Domain | Render's free subdomain for now; real domain purchase deferred until a business name is chosen |
 | Spam protection | Honeypot field on the public request form |
 
 Cost: **$0/month** at launch traffic levels.
+
+## Correction (post-approval)
+
+This step originally claimed Render needed "no containerization" for Java.
+That was wrong — Render has no native Java buildpack; Java deploys on
+Render always go through a Dockerfile, even on the free tier. Confirmed via
+Render's own community docs when preparing to actually deploy. The
+Dockerfile this requires is small and standard (Maven build stage, JRE
+runtime stage) — doesn't change the hosting choice or cost, just corrects
+an inaccurate claim about the mechanism.
 
 ## Known tradeoff
 
