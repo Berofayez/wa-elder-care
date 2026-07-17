@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Request Care — WA Elder Care')}"></head>
+<body>
+
+<div th:replace="~{fragments :: header(${businessName}, ${businessPhone})}"></div>
+
+<main class="container">
+    <section>
+        <h1>Request care</h1>
+        <p>
+            Need help <strong>today</strong>? Please
+            <a th:href="'tel:' + ${businessPhone}" th:text="'call ' + ${businessPhone}">call us</a>
+            instead of using this form. For anything else, fill this out and
+            we'll call you back by the end of the business day.
+        </p>
+
+        <form th:action="@{/request}" th:object="${serviceRequestForm}" method="post">
+
+            <!-- Honeypot: real visitors never see or fill this in -->
+            <div class="honeypot-field" aria-hidden="true">
+                <label for="website">Leave this field blank</label>
+                <input type="text" id="website" th:field="*{website}" tabindex="-1" autocomplete="off"/>
+            </div>
+
+            <div class="field">
+                <label for="requestorName">Your name</label>
+                <input type="text" id="requestorName" th:field="*{requestorName}"/>
+                <div class="field-error" th:if="${#fields.hasErrors('requestorName')}" th:errors="*{requestorName}"></div>
+            </div>
+
+            <div class="field">
+                <label for="requestorPhone">Your phone number</label>
+                <input type="tel" id="requestorPhone" th:field="*{requestorPhone}"/>
+                <div class="field-error" th:if="${#fields.hasErrors('requestorPhone')}" th:errors="*{requestorPhone}"></div>
+            </div>
+
+            <div class="field">
+                <label for="requestorEmail">Your email (optional)</label>
+                <input type="email" id="requestorEmail" th:field="*{requestorEmail}"/>
+            </div>
+
+            <div class="field">
+                <label>Who is this request for?</label>
+                <div class="radio-group">
+                    <label th:each="rel : ${relationships}">
+                        <input type="radio" th:field="*{relationship}" th:value="${rel}"/>
+                        <span th:text="${rel.label}"></span>
+                    </label>
+                </div>
+                <div class="field-error" th:if="${#fields.hasErrors('relationship')}" th:errors="*{relationship}"></div>
+            </div>
+
+            <div class="field">
+                <label for="elderName">Name of the person who needs care</label>
+                <input type="text" id="elderName" th:field="*{elderName}"/>
+                <div class="field-error" th:if="${#fields.hasErrors('elderName')}" th:errors="*{elderName}"></div>
+            </div>
+
+            <div class="field">
+                <label for="elderLocation">Their city or zip code</label>
+                <input type="text" id="elderLocation" th:field="*{elderLocation}" placeholder="e.g. Everett, 98201"/>
+                <div class="field-error" th:if="${#fields.hasErrors('elderLocation')}" th:errors="*{elderLocation}"></div>
+            </div>
+
+            <div class="field">
+                <label>What kind of help is needed?</label>
+                <div class="checkbox-group">
+                    <label th:each="careType : ${careTypes}">
+                        <input type="checkbox" th:field="*{careTypes}" th:value="${careType}"/>
+                        <span th:text="${careType.label}"></span>
+                    </label>
+                </div>
+                <div class="field-error" th:if="${#fields.hasErrors('careTypes')}" th:errors="*{careTypes}"></div>
+            </div>
+
+            <div class="field">
+                <label>How urgent is this?</label>
+                <div class="radio-group">
+                    <label th:each="u : ${urgencies}">
+                        <input type="radio" th:field="*{urgency}" th:value="${u}"/>
+                        <span th:text="${u.label}"></span>
+                    </label>
+                </div>
+                <div class="field-error" th:if="${#fields.hasErrors('urgency')}" th:errors="*{urgency}"></div>
+            </div>
+
+            <div class="field">
+                <label for="howHeardAboutUs">How did you hear about us? (optional)</label>
+                <input type="text" id="howHeardAboutUs" th:field="*{howHeardAboutUs}"/>
+            </div>
+
+            <div class="field">
+                <label for="notes">Anything else we should know? (optional)</label>
+                <textarea id="notes" th:field="*{notes}"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send request</button>
+        </form>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer(${businessName}, ${businessPhone})}"></div>
+
+</body>
+</html>

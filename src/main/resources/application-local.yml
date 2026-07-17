@@ -1,0 +1,16 @@
+# Local development profile: H2 file database, no real SMTP credentials
+# needed. Run with: mvn spring-boot:run -Dspring-boot.run.profiles=local
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/local-db
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+app:
+  notify-email: dev@example.com
+  admin1-name: Dev Admin
+  admin1-email: admin@example.com
+  admin1-password: dev-password-123

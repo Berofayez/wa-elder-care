@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Request Detail — WA Elder Care')}"></head>
+<body>
+
+<main class="container">
+    <a th:href="@{/admin/dashboard}">&larr; Back to all requests</a>
+
+    <div class="card" style="margin-top:16px;">
+        <h1 th:text="${request.elderName}">Elder name</h1>
+        <span class="status-badge" th:text="${request.status}" th:classappend="'status-' + ${request.status}"></span>
+        <p th:text="${'Received ' + #temporals.format(request.createdAt, 'MMM d, yyyy h:mm a')}">Received</p>
+
+        <h3>Requestor</h3>
+        <p>
+            <span th:text="${request.requestorName}">Name</span>
+            (<span th:text="${request.relationship.label}">relationship</span>)<br/>
+            Phone: <a th:href="'tel:' + ${request.requestorPhone}" th:text="${request.requestorPhone}"></a><br/>
+            <span th:if="${request.requestorEmail}">
+                Email: <a th:href="'mailto:' + ${request.requestorEmail}" th:text="${request.requestorEmail}"></a>
+            </span>
+        </p>
+
+        <h3>Care needed</h3>
+        <p>
+            Location: <span th:text="${request.elderLocation}"></span><br/>
+            Urgency: <span th:text="${request.urgency.label}"></span><br/>
+            Care types:
+            <span th:each="type, iter : ${request.careTypes}">
+                <span th:text="${type.label}"></span><span th:if="${!iter.last}">, </span>
+            </span>
+        </p>
+
+        <p th:if="${request.howHeardAboutUs}">
+            <strong>How they heard about us:</strong> <span th:text="${request.howHeardAboutUs}"></span>
+        </p>
+
+        <p th:if="${request.notes}">
+            <strong>Notes from requestor:</strong><br/>
+            <span th:text="${request.notes}"></span>
+        </p>
+
+        <p th:if="${request.handledBy}">
+            <strong>Being handled by:</strong> <span th:text="${request.handledBy.name}"></span>
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Update status</h2>
+        <form th:action="@{/admin/requests/{id}/status(id=${request.id})}" method="post">
+            <div class="field">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option th:each="s : ${statuses}" th:value="${s}" th:text="${s}"
+                            th:selected="${s == request.status}"></option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="internalNotes">Internal notes (call log, follow-ups — not visible to the requestor)</label>
+                <textarea id="internalNotes" name="internalNotes" th:text="${request.internalNotes}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

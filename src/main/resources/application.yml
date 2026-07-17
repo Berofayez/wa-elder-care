@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: wa-elder-care
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: ${PORT:8080}
+
+app:
+  notify-email: ${NOTIFY_EMAIL:}
+  business-name: ${BUSINESS_NAME:WA Elder Care}
+  business-phone: ${BUSINESS_PHONE:(555) 555-5555}
+  admin1-name: ${ADMIN1_NAME:}
+  admin1-email: ${ADMIN1_EMAIL:}
+  admin1-password: ${ADMIN1_PASSWORD:}
+  admin2-name: ${ADMIN2_NAME:}
+  admin2-email: ${ADMIN2_EMAIL:}
+  admin2-password: ${ADMIN2_PASSWORD:}

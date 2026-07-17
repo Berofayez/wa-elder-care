@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('About — WA Elder Care')}"></head>
+<body>
+
+<div th:replace="~{fragments :: header(${businessName}, ${businessPhone})}"></div>
+
+<main class="container">
+    <section>
+        <h1>Who's coming into your parent's home</h1>
+        <p>
+            [Founder photo and personal story go here — why you started this,
+            what caregiving means to you. This page exists specifically to answer
+            the trust question families have before they'll let anyone provide
+            hands-on care for someone they love.]
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Credentials &amp; screening</h2>
+        <ul>
+            <li>
+                <strong>WA Home Care Aide certification:</strong>
+                [status — e.g. "In progress, expected complete by (date)" or
+                certificate number once issued]
+            </li>
+            <li>
+                <strong>Background check:</strong>
+                WA State Patrol + FBI fingerprint background check, as required
+                for all long-term care workers in Washington State.
+            </li>
+            <li>
+                <strong>DOH Home Care Agency license:</strong>
+                [license number once issued, or "application in progress"]
+            </li>
+        </ul>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer(${businessName}, ${businessPhone})}"></div>
+
+</body>
+</html>

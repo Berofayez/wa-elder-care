@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Request Received — WA Elder Care')}"></head>
+<body>
+
+<div th:replace="~{fragments :: header(${businessName}, ${businessPhone})}"></div>
+
+<main class="container">
+    <section class="card">
+        <h1>Thanks — we'll call you back today</h1>
+        <p>
+            We've received your request and will call you back by the end of
+            the business day. If anything changes and you need help sooner,
+            call us directly at
+            <a th:href="'tel:' + ${businessPhone}" th:text="${businessPhone}">(555) 555-5555</a>.
+        </p>
+        <a class="btn btn-secondary" th:href="@{/}">Back to home</a>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer(${businessName}, ${businessPhone})}"></div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Admin Dashboard — WA Elder Care')}"></head>
+<body>
+
+<main class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+        <h1>Care requests</h1>
+        <div>
+            <span th:text="${adminEmail}"></span>
+            &middot;
+            <form th:action="@{/admin/logout}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-secondary" style="padding:4px 12px;">Log out</button>
+            </form>
+        </div>
+    </div>
+
+    <p th:if="${#lists.isEmpty(requests)}">No requests yet.</p>
+
+    <table class="requests-table" th:unless="${#lists.isEmpty(requests)}">
+        <thead>
+        <tr>
+            <th>Received</th>
+            <th>Requestor</th>
+            <th>Care recipient</th>
+            <th>Urgency</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="request : ${requests}">
+            <td th:text="${#temporals.format(request.createdAt, 'MMM d, h:mm a')}">Jan 1, 9:00 AM</td>
+            <td>
+                <a th:href="@{/admin/requests/{id}(id=${request.id})}" th:text="${request.requestorName}">Name</a>
+            </td>
+            <td th:text="${request.elderName}">Elder name</td>
+            <td th:text="${request.urgency.label}">Urgency</td>
+            <td>
+                <span th:text="${request.status}"
+                      th:classappend="'status-' + ${request.status}"
+                      class="status-badge"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>

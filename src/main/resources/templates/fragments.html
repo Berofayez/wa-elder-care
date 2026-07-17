@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="head(title)">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title th:text="${title}">WA Elder Care</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</div>
+
+<div th:fragment="header(businessName, businessPhone)">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" th:href="@{/}" th:text="${businessName}">Business Name</a>
+            <nav class="nav-links">
+                <a th:href="@{/about}">About</a>
+                <a th:href="@{/contact}">Contact</a>
+                <a class="btn btn-secondary" th:href="@{/request}">Request Care</a>
+            </nav>
+            <a class="call-now" th:href="'tel:' + ${businessPhone}">
+                <span class="call-now-label">Need help today?</span>
+                <span class="call-now-number" th:text="${businessPhone}">(555) 555-5555</span>
+            </a>
+        </div>
+    </header>
+</div>
+
+<div th:fragment="footer(businessName, businessPhone)">
+    <footer class="site-footer">
+        <p>
+            <span th:text="${businessName}">Business Name</span>
+            — serving Seattle, Everett, and surrounding communities
+        </p>
+        <p>
+            Call <a th:href="'tel:' + ${businessPhone}" th:text="${businessPhone}">(555) 555-5555</a>
+            or <a th:href="@{/request}">request care online</a>.
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>

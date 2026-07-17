@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  mail:
+    host: localhost
+    port: 3025
+    username: test
+    password: test
+
+app:
+  notify-email: test@example.com
+  business-name: WA Elder Care
+  business-phone: (555) 555-5555
+  admin1-name: Test Admin
+  admin1-email: admin@example.com
+  admin1-password: test-password-123
+  admin2-name: ""
+  admin2-email: ""
+  admin2-password: ""

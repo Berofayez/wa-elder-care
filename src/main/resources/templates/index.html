@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('WA Elder Care — Trusted In-Home Care for Your Loved One')}"></head>
+<body>
+
+<div th:replace="~{fragments :: header(${businessName}, ${businessPhone})}"></div>
+
+<main>
+    <div class="container hero">
+        <h1>Trusted, hands-on care for your loved one — in their own home</h1>
+        <p>
+            Meal preparation, personal care, mobility assistance, and companionship
+            for elders in Seattle, Everett, and surrounding communities. One
+            dedicated caregiver, background-checked and certified, not a
+            revolving door of strangers.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" th:href="@{/request}">Request Care</a>
+            <a class="btn btn-secondary" th:href="'tel:' + ${businessPhone}">Call Now</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>How we help</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Personal care</h3>
+                    <p>Bathing, hygiene, and dressing assistance, with dignity and patience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Meal preparation</h3>
+                    <p>Home-cooked meals suited to your loved one's needs and preferences.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mobility assistance</h3>
+                    <p>Help walking, moving safely around the home, and transfers.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Companionship</h3>
+                    <p>Real conversation and presence — reducing isolation, not just checking a box.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Serving Seattle, Everett &amp; surrounding communities</h2>
+            <p>
+                We provide care in person, so we keep our service area close —
+                King and Snohomish counties. Not sure if you're in range?
+                <a th:href="@{/request}">Send a request</a> and we'll let you know.
+            </p>
+        </section>
+    </div>
+</main>
+
+<div th:replace="~{fragments :: footer(${businessName}, ${businessPhone})}"></div>
+
+</body>
+</html>

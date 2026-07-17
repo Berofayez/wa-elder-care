@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Contact — WA Elder Care')}"></head>
+<body>
+
+<div th:replace="~{fragments :: header(${businessName}, ${businessPhone})}"></div>
+
+<main class="container">
+    <section>
+        <h1>Get in touch</h1>
+        <p>
+            Need help today? Call us directly — for anything less urgent,
+            send a request and we'll call you back by the end of the business day.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" th:href="'tel:' + ${businessPhone}" th:text="'Call ' + ${businessPhone}">Call Now</a>
+            <a class="btn btn-secondary" th:href="@{/request}">Request Care Online</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Service area</h2>
+        <p>Seattle, Everett, and surrounding communities in King and Snohomish counties.</p>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer(${businessName}, ${businessPhone})}"></div>
+
+</body>
+</html>
