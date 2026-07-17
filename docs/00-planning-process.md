@@ -22,8 +22,8 @@ reality.
 
 | Step | Status |
 |---|---|
-| 1. Vision & problem definition | In progress |
-| 2. Market & user segments | Not started |
+| 1. Vision & problem definition | Approved |
+| 2. Market & user segments | In progress |
 | 3. Business model | Not started |
 | 4. Trust, safety & compliance | Not started |
 | 5. MVP scope | Not started |
