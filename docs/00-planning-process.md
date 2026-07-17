@@ -26,8 +26,8 @@ reality.
 | 2. Market & user segments | Approved |
 | 3. Business model | Approved |
 | 4. Trust, safety & compliance | Approved |
-| 5. MVP scope | In progress |
-| 6. Core user flows & UX | Not started |
+| 5. MVP scope | Approved |
+| 6. Core user flows & UX | In progress |
 | 7. Information architecture | Not started |
 | 8. Technical architecture | Not started |
 | 9. Launch & roadmap | Not started |

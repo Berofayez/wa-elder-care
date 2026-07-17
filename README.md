@@ -21,7 +21,7 @@ Planning in progress. See `docs/00-planning-process.md` for the roadmap and
 2. [Market & user segments](docs/02-market-and-user-segments.md)
 3. [Business model](docs/03-business-model.md)
 4. [Trust, safety & compliance](docs/04-trust-safety-compliance.md)
-5. MVP scope
+5. [MVP scope](docs/05-mvp-scope.md)
 6. Core user flows & UX
 7. Information architecture
 8. Technical architecture
