@@ -24,8 +24,8 @@ reality.
 |---|---|
 | 1. Vision & problem definition | Approved |
 | 2. Market & user segments | Approved |
-| 3. Business model | In progress |
-| 4. Trust, safety & compliance | Not started |
+| 3. Business model | Approved |
+| 4. Trust, safety & compliance | In progress |
 | 5. MVP scope | Not started |
 | 6. Core user flows & UX | Not started |
 | 7. Information architecture | Not started |

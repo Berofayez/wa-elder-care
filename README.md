@@ -19,7 +19,7 @@ Planning in progress. See `docs/00-planning-process.md` for the roadmap and
 
 1. [Vision & problem definition](docs/01-vision-and-business-model.md)
 2. [Market & user segments](docs/02-market-and-user-segments.md)
-3. Business model
+3. [Business model](docs/03-business-model.md)
 4. Trust, safety & compliance
 5. MVP scope
 6. Core user flows & UX
